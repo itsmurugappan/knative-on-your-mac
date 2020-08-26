@@ -8,9 +8,8 @@ kind:
 
 istio: 
 	  @echo "installing istio"
-	  kubectl create ns istio-system
-	  kubectl apply  -f istio/istio-1.5.1.yaml
+	  kubectl apply  -f istio/istio-1.5.6.yaml
 
 knative: 
 	  	@echo "installing knative"
-	  	kubectl apply  -f knative/knative-0.15.yaml
+	  	kubectl apply  -f knative/knative-0.17.yaml

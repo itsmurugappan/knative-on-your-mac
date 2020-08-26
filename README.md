@@ -27,21 +27,19 @@ $ brew install kind
 
 #### 2. Knative and Istio
 
-Run the Makefile to install istio (1.5.1) and knative (0.15) 
+Run the Makefile to install istio (1.5.6) and knative (0.17) 
 
 ```
 $ make
 ```
 
-Please note : There is an open [issue](https://github.com/istio/istio/issues/22463) which might prevent containers to start. please run the below command to restart istiod
-
-```
-kubectl -n istio-system rollout restart deployment istiod
-```
-
 #### 3. KN CLI
 
-Follow the steps [here](https://github.com/knative/client/blob/master/docs/README.md) to install kn
+```
+brew tap knative/client
+
+brew install kn
+```
 
 #### 4. Create the service
 
