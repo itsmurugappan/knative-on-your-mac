@@ -6,7 +6,7 @@ This guide will help you get started with knative on your mac in minutes
 
 * Docker running on your machine
 * kubectl
-* brew
+* brew (optional)
 
 ### Components involved
 
@@ -50,19 +50,28 @@ $ kn service create gotest --image=murugappans/goswaggertest
 #### 5. Call the service
 
 ```
-$ kubectl port-forward svc/istio-ingressgateway -n istio-system 8080:80 &
+$ curl http://gotest.default.127.0.0.1.nip.io -d "muru"
 
-# in new terminal
-
-$ curl -X POST -H "Host: gotest.default.example.com" http://localhost:8080/
+Hello, Go. You said: muru
 ```
-
-![](./images/running.jpeg)
-![](./images/invoke.jpeg)
 
 #### Cleanup
 
 ```
 $ Kind delete cluster
 ```
+
+#### Troubleshooting
+
+If istio installation fails, please run the istio and knative installation again
+
+```
+make istio
+make knative
+```
+
+#### Other Knative on KIND Repos
+
+1. https://github.com/csantanapr/knative-kind
+2. https://github.com/n3wscott/kind-for-knative
 

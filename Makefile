@@ -4,7 +4,7 @@ all: kind istio knative
 
 kind:
 	  echo "create kubernetes in docker cluster"
-	  kind create cluster
+	  kind create cluster --config kind-config.yaml
 
 istio: 
 	  @echo "installing istio"
