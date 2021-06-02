@@ -27,7 +27,7 @@ $ brew install kind
 
 #### 2. Knative and Istio
 
-Run the Makefile to install istio (1.5.6) and knative (0.17) 
+Run the Makefile to install istio (1.10.0) and knative (0.23) 
 
 ```
 $ make
@@ -44,21 +44,21 @@ brew install kn
 #### 4. Create the service
 
 ```
-$ kn service create gotest --image=murugappans/goswaggertest
+$ kn service create gotest --image=ghcr.io/itsmurugappan/hw
 ```
 
 #### 5. Call the service
 
 ```
-$ curl http://gotest.default.127.0.0.1.nip.io -d "muru"
+$ curl http://gotest-default.127.0.0.1.nip.io 
 
-Hello, Go. You said: muru
+{"status":"Status OK"}
 ```
 
 #### Cleanup
 
 ```
-$ Kind delete cluster
+$ kind delete cluster
 ```
 
 #### Troubleshooting
